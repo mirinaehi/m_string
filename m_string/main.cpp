@@ -6,15 +6,16 @@ class m_string {
 public:
 	m_string() {}
 
-	m_string(const m_string& rhs)
+	m_string(const m_string& rhs) : _Mysize(rhs._Mysize)
 	{
-
+		_Myptr = new char[_Mysize + 1];
+		strcpy(_Myptr, rhs._Myptr);
 	}
 
 	m_string(const char* str)
 	{
-		int len = strlen(str) + 1;
-		_Myptr = new char[len];
+		_Mysize = strlen(str);
+		_Myptr = new char[_Mysize+1];
 		strcpy(_Myptr, str);
 	}
 
@@ -32,7 +33,8 @@ private:
 
 int main(void)
 {
-	m_string str = "123";
-	cout << str;
+	m_string str1 = "123";
+	m_string str2 = str1;
+	cout << str2 << endl;
 	return 0;
 }
