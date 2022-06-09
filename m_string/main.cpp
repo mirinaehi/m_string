@@ -19,6 +19,11 @@ public:
 		strcpy(_Myptr, str);
 	}
 
+	~m_string()
+	{
+		delete []_Myptr;
+	}
+
 	m_string& operator=(const m_string& rhs)
 	{
 		if(_Myptr != nullptr)
@@ -51,7 +56,8 @@ public:
 		strcpy(temp._Myptr, _Myptr);
 		strcat(temp._Myptr, rhs._Myptr);
 				
-		delete []_Myptr;
+		// TODO : 필요한지 파악하기
+		// delete []_Myptr;
 		_Myptr = nullptr;
 
 		return temp;
