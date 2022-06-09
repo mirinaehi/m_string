@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <string.h>
 using namespace std;
 
@@ -56,7 +56,7 @@ public:
 		strcpy(temp._Myptr, _Myptr);
 		strcat(temp._Myptr, rhs._Myptr);
 				
-		// TODO : delete°¡ ÇÊ¿äÇÑÁö ÆÄ¾ÇÇÏ±â
+		// TODO : deleteê°€ í•„ìš”í•œì§€ íŒŒì•…í•˜ê¸°
 		delete []_Myptr;
 		_Myptr = nullptr;
 
