@@ -58,6 +58,28 @@ public:
 		return temp;
 	}
 
+	m_string operator+(const char* str)
+	{
+		m_string temp;
+		temp._Mysize = _Mysize + strlen(str);
+		temp._Myptr = new char[temp._Mysize + 1];
+
+		strcpy(temp._Myptr, _Myptr);
+		strcat(temp._Myptr, str);
+
+		return temp;
+	}
+
+	int operator==(const m_string& rhs)
+	{
+		return strcmp(_Myptr, rhs._Myptr);
+	}
+
+	int operator==(const char* str)
+	{
+		return strcmp(_Myptr, str);
+	}
+
 	friend ostream& operator<<(ostream& os, const m_string& ms)
 	{
 		os << ms._Myptr;
@@ -66,6 +88,7 @@ public:
 
 	unsigned int size(void) { return _Mysize; }
 	unsigned int length(void) { return _Mysize; }
+	const char* c_str(void) { return (const char*)_Myptr; }
 
 private:
 	unsigned int _Mysize;
@@ -86,6 +109,12 @@ int main(void)
 
 	str2 = str2 + str1;
 	cout << str2 << " " << str2.size() << endl;
+
+	str2 = str2 + "ab";
+	cout << str2 << " " << str2.size() << endl;
+
+	cout << (str1 == "123") << endl;
+	cout << (str1 == str2) << endl;
 
 	return 0;
 }
