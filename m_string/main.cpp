@@ -26,8 +26,7 @@ public:
 
 	m_string& operator=(const m_string& rhs)
 	{
-		if(_Myptr != nullptr)
-			delete []_Myptr;
+		delete []_Myptr;
 
 		_Mysize = rhs._Mysize;
 		_Myptr = new char[_Mysize + 1];
@@ -56,10 +55,6 @@ public:
 		strcpy(temp._Myptr, _Myptr);
 		strcat(temp._Myptr, rhs._Myptr);
 				
-		// TODO : delete가 필요한지 파악하기
-		delete []_Myptr;
-		_Myptr = nullptr;
-
 		return temp;
 	}
 
