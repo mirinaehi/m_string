@@ -25,6 +25,9 @@ public:
 		return os;
 	}
 
+	unsigned int size(void) { return _Mysize; }
+	unsigned int length(void) { return _Mysize; }
+
 private:
 	unsigned int _Mysize;
 	char* _Myptr;
@@ -35,6 +38,6 @@ int main(void)
 {
 	m_string str1 = "123";
 	m_string str2 = str1;
-	cout << str2 << endl;
+	cout << str2 << " " << str2.size() << endl;
 	return 0;
 }
