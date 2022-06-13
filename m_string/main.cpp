@@ -93,7 +93,7 @@ public:
 private:
 	unsigned int _Mysize;
 	char* _Myptr;
-};
+}; 
 
 
 int main(void)
